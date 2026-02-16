@@ -89,6 +89,7 @@ jobs:
           target: google_apis
           disable-animations: true
           emulator-options: -no-window -noaudio -no-boot-anim -gpu swiftshader_indirect
+          emulator-boot-timeout: 1200
           # NOTE: android-emulator-runner executes each line in `script` in a fresh shell.
           # Keep this as a single line so `cd` applies to the build command.
           script: cd source && OUT_DIR="${{ github.workspace }}/source/out" RUN_ANDROID_UI_TESTS=1 bash tool/ci/build.sh android
